@@ -16,11 +16,30 @@ class Filmler extends React.Component {
     state = {
 
         //  filmler_db = [ yerine iki noktalı yaz. filmler_db : [  çünkü property şeklinde gelecek
-       
         filmler_db: [],
-
+     
         aramaQuery: "",
     }
+
+
+    /* json üzerinden çekmek için npm json server ekle npm i json-server
+    npx json-server --watch src/api/filmler_db.json --port 3002
+    
+    port u ayrı seç. Dosya yolunu belirt
+
+    */
+    async componentDidMount(){
+        const db_adres =  "http://localhost:3002/filmler_db";
+
+        //fetch asenkron sorgularda kullanılır. O yüzden asenkron fonksiyona çevirmek gerek
+        //asenkron olması için fetch ve json fonksiyonlarını await ve async kullan       
+        const cevap= await fetch(db_adres);
+       // console.log(cevap); 
+        const json_data= await cevap.json();
+        console.log(json_data);
+        this.setState({filmler_db : json_data});
+        console.log(this.filmler_db);
+     }
 
     Sil_Film = (flm) => {
         const yeniFilmListesi = this.state.filmler_db.filter(
