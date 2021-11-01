@@ -2,6 +2,11 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 import axios from "axios";
+require('dotenv').config();
+//apiyi direk dışardan gözükmesin diye npm dotenv ekledik
+//proces.env. başına REACT_APP getirilmesi gerekir çağırıken
+
+console.log(process.env.REACT_APP_API_KEY);
 
 
 //Functional Component olmaz çünkü dinamik gösterilecek
@@ -38,6 +43,11 @@ class Filmler extends React.Component {
         //kendi api adresimizi ekliyoruz https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1
         const baseUrl = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1");
         console.log(baseUrl.data.results)
+
+        //Api direk gözükmemesi için DOTENV kullandık
+        // const baseUrl = await axios.get(`{https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1}`);
+        // console.log(baseUrl.data.results)
+
        
        this.setState({ filmler_db: baseUrl.data.results });
 
