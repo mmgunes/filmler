@@ -81,7 +81,7 @@ class Filmler extends React.Component {
 
     // Fetch metoduyla API üzerinde ile silme
 
-    Sil_Film = async (flm) => {
+   /* Sil_Film = async (flm) => {
         const db_adres = `http://localhost:3002/filmler_db/${flm.id}`
 
         await fetch(db_adres, {
@@ -93,12 +93,31 @@ class Filmler extends React.Component {
         const yeniFilmListesi = this.state.filmler_db.filter(
             f => f.id !== flm.id,
         );
-        
+
         this.setState(state => (
             { filmler_db: yeniFilmListesi }
         ))
 
-    }
+    } */
+
+    // AXIOS kütüphanesiyle silme
+
+   Sil_Film = async (flm) => {
+
+
+
+        const db_adres = `http://localhost:3002/filmler_db/${flm.id}`
+        axios.delete(db_adres)
+
+        const yeniFilmListesi = this.state.filmler_db.filter(
+            f => f.id !== flm.id,
+        );
+
+        this.setState(state => (
+            { filmler_db: yeniFilmListesi }
+        ))
+
+    } 
 
 
     Ara_Film_Fnk = (event) => {
