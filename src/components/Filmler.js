@@ -94,7 +94,7 @@ class Filmler extends React.Component {
             }
 
 
-            //bazıları name bazıları title olduğunda
+            //bazıları name bazıları title olduğunda if(s.name) s.name varsa demek
             // if(s.name){
             //     return s.name.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
             // }else{
