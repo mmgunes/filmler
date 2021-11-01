@@ -6,14 +6,16 @@ const MovieList = (props) => {
     //    console.log("Silme Tıklandı");
     console.log(event.screenX);
    }   */
-
+   
     return (
         <div className="row">
 
             {/*props kullanarak yapalım 
             {this.props.filmler.map((flm)=>flm())} */}
 
-            {props.filmler_prop.map((flm) => (
+            {props.filmler_prop.map((flm) => ( 
+
+                
 
                 <div className="col-lg-4 " key={flm.id}>
                     <div className="card mb-4 shadow-sm">
@@ -22,6 +24,8 @@ const MovieList = (props) => {
 
                         <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${flm.poster_path}`} className="card-img-top" alt="Sample Movie" />
                         <div className="card-body">
+                            {/* //bazıları name bazıları title olduğunda 
+                            <h5 className="card-title">{flm.name ? flm.name : flm.title}</h5> */}
                             <h5 className="card-title">{flm.title}</h5>
                             <p className="card-text">{flm.overview}</p>
                             <div className="d-flex justify-content-between align-items-center">

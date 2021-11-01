@@ -41,15 +41,19 @@ class Filmler extends React.Component {
     async componentDidMount() {
 
         //kendi api adresimizi ekliyoruz https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1
-        const baseUrl = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1");
-        console.log(baseUrl.data.results)
+        // const baseUrl = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1");
+        // console.log(baseUrl.data.results)
 
         //Api direk gözükmemesi için DOTENV kullandık
         // const baseUrl = await axios.get(`{https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1}`);
         // console.log(baseUrl.data.results)
 
+        // Popüler filmleri getir 
+         const baseUrl = await axios.get("https://api.themoviedb.org/3/list/7112357?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US");
+         console.log(baseUrl.data.items);
+
        
-       this.setState({ filmler_db: baseUrl.data.results });
+        this.setState({ filmler_db: baseUrl.data.items });
 
 
     }
@@ -88,6 +92,14 @@ class Filmler extends React.Component {
             s => {
                 return s.title.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
             }
+
+
+            //bazıları name bazıları title olduğunda
+            // if(s.name){
+            //     return s.name.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
+            // }else{
+            //     return s.title.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
+            // }   
         )
     }
 
