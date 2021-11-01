@@ -30,76 +30,22 @@ class Filmler extends React.Component {
     */
 
 
-    /*  async componentDidMount(){
-          const db_adres =  "http://localhost:3002/filmler_db";
-  
-          //fetch asenkron sorgularda kullanılır. O yüzden asenkron fonksiyona çevirmek gerek
-          //asenkron olması için fetch ve json fonksiyonlarını await ve async kullan       
-          const cevap= await fetch(db_adres);
-         // console.log(cevap); 
-          const json_data= await cevap.json();
-          console.log(json_data);
-          this.setState({filmler_db : json_data});
-          console.log(this.filmler_db);
-       }
-      */
 
     // Aynı İşlemi axios kütüphanesiyle yapabiliriz
 
     async componentDidMount() {
 
-        const db_adres = await axios.get("http://localhost:3002/filmler_db");
-        // console.log(db_adres);
-
-        //db_adres.data da json şeklinde object tutuyor yani veritabanı
-        this.setState({ filmler_db: db_adres.data });
+        //kendi api adresimizi ekliyoruz https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1
+        const baseUrl = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1");
+        console.log(baseUrl.data.results)
+       
+       this.setState({ filmler_db: baseUrl.data.results });
 
 
     }
 
 
-    /*
-        Sil_Film = (flm) => {
-            const yeniFilmListesi = this.state.filmler_db.filter(
-                f => f.id !== flm.id,
-                //console.log("çalış2")
-            );
     
-            //setState le yapılan işlemler react edilir.
-    
-            /* 1.yol  boş liste için uygun  
-            this.setState({
-                filmler_db : yeniFilmListesi
-            })
-            //*2.yol aynı rlimizde liste varsa
-            this.setState(state => (
-                { filmler_db: yeniFilmListesi }
-            ))
-        } */
-
-
-
-    // Fetch metoduyla API üzerinde ile silme
-
-   /* Sil_Film = async (flm) => {
-        const db_adres = `http://localhost:3002/filmler_db/${flm.id}`
-
-        await fetch(db_adres, {
-            //get varsayılan olduğu için method: "GET" yazmamıştık
-            method: "DELETE"
-        })
-
-
-        const yeniFilmListesi = this.state.filmler_db.filter(
-            f => f.id !== flm.id,
-        );
-
-        this.setState(state => (
-            { filmler_db: yeniFilmListesi }
-        ))
-
-    } */
-
     // AXIOS kütüphanesiyle silme
 
    Sil_Film = async (flm) => {
@@ -130,7 +76,7 @@ class Filmler extends React.Component {
     Filtrele = () => {
         return this.state.filmler_db.filter(
             s => {
-                return s.name.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
+                return s.title.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
             }
         )
     }
