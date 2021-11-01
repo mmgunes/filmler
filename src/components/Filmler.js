@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
-
+import axios from "axios";
 
 
 //Functional Component olmaz çünkü dinamik gösterilecek
@@ -28,7 +28,9 @@ class Filmler extends React.Component {
     port u ayrı seç. Dosya yolunu belirt
 
     */
-    async componentDidMount(){
+  
+  
+  /*  async componentDidMount(){
         const db_adres =  "http://localhost:3002/filmler_db";
 
         //fetch asenkron sorgularda kullanılır. O yüzden asenkron fonksiyona çevirmek gerek
@@ -40,6 +42,22 @@ class Filmler extends React.Component {
         this.setState({filmler_db : json_data});
         console.log(this.filmler_db);
      }
+    */
+
+    // Aynı İşlemi axios kütüphanesiyle yapabiliriz
+
+     async componentDidMount(){
+
+        const db_adres= await axios.get("http://localhost:3002/filmler_db");
+        console.log(db_adres);
+
+        //db_adres.data da json şeklinde object tutuyor yani veritabanı
+        this.setState({filmler_db: db_adres.data});
+
+
+     }
+
+
 
     Sil_Film = (flm) => {
         const yeniFilmListesi = this.state.filmler_db.filter(
