@@ -54,6 +54,12 @@ class Filmler extends React.Component {
         this.setState({ aramaQuery: event.target.value })
     }
 
+    Ekle_Film_Fnk = async (film) => {
+        await axios.post( `http://localhost:3002/filmler_db/`,film)
+        this.setState(state => { filmler_db:state.filmler_db.concat(film)})
+        console.log(this.filmler_db);
+    } 
+
     Filtrele = () => {
         return this.state.filmler_db.filter(
             s => {
@@ -106,7 +112,18 @@ class Filmler extends React.Component {
                     </Route> */}
 
                     {/* 2.yol aynı */}
-                    <Route path="/ekle" component={FilmEkle} />
+                    {/* <Route path="/ekle" component={FilmEkle} /> */}
+                    
+                    <Route exact path="/ekle" render={()=>(
+
+                        <FilmEkle 
+                        
+                        filmEkleProp = {(film) => {this.Ekle_Film_Fnk(film)}}
+                        />
+                        )}> 
+                       
+                    </Route>
+                
 
                 </div>
             </Router>
