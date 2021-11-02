@@ -55,6 +55,41 @@
       "imageURL": "matrix4.jpeg",
       "overview": "Matrix 4 Açıklama",
       "id": 8
+    },
+    {
+      "name": "Matrix 2",
+      "rating": "8.8",
+      "imageURL": "matrix2.jpeg",
+      "overview": "Matrix 2 Açıklama",
+      "id": 9
+    },
+    {
+      "name": "MGS",
+      "rating": "9.2",
+      "imageURL": "matrix.com",
+      "overview": "13",
+      "id": 10
+    },
+    {
+      "name": "MGS",
+      "rating": "9.2",
+      "imageURL": "matrix.com",
+      "overview": "777777",
+      "id": 11
+    },
+    {
+      "name": "MGS",
+      "rating": "9.2",
+      "imageURL": "matrix.com",
+      "overview": "666666",
+      "id": 14
+    },
+    {
+      "name": "Matrix 3",
+      "rating": "8.5",
+      "imageURL": "matrix3.jpeg",
+      "overview": "3333",
+      "id": 15
     }
   ]
 }

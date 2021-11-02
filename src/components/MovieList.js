@@ -13,11 +13,11 @@ const MovieList = (props) => {
             {/*props kullanarak yapalım 
             {this.props.filmler.map((flm)=>flm())} */}
 
-            {props.filmler_prop.map((flm) => ( 
+            {props.filmler_prop.map((flm ,i) => ( 
 
                 
 
-                <div className="col-lg-4 " key={flm.id}>
+                <div className="col-lg-4 " key={i}>
                     <div className="card mb-4 shadow-sm">
                     
                     {/* resmin https://www.themoviedb.org/t/p/w220_and_h330_face/ kısmı sabit. Back tickler arasında yaz hepsini */}

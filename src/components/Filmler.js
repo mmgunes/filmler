@@ -114,12 +114,14 @@ class Filmler extends React.Component {
                     {/* 2.yol aynı */}
                     {/* <Route path="/ekle" component={FilmEkle} /> */}
 
-                    <Route exact path="/ekle" render={(history) => (
+
+                    {/* render ın içine history ekle ve propun içinde push edince anasayfaya yönlendir */}
+                    <Route exact path="/ekle" render={({history}) => (
 
                         <FilmEkle
                             filmEkleProp={(film) => { this.Ekle_Film_Fnk(film)
                             
-                            history.push("/")
+                            history.push("/");
                             }}
                                 
                         />

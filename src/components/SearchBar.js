@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from  "react-router-dom";
 
 
 
@@ -44,10 +44,14 @@ class SearchBar extends React.Component {
                         />
                     </div>
                     <div className="col-2 mt-5">
-                        <button type="button"
-                            className="btn btn-md btn-danger"
-                            >Film Ekle
-                        </button>
+                         
+                    <Link to="/ekle"
+                     type="button"
+                     className="btn btn-md btn-danger"
+                     >Film Ekle</Link>
+                        
+                            
+                        
                     </div>
                 </div>
             </form>
