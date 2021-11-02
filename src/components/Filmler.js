@@ -4,7 +4,7 @@ import MovieList from "./MovieList";
 import axios from "axios";
 import FilmEkle from "./FilmEkle";
 //Router işlemi için ekledik
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router,  Route } from "react-router-dom";
 
 
 class Filmler extends React.Component {
@@ -78,9 +78,10 @@ class Filmler extends React.Component {
             <Router>
 
                 <div className="container">
-                    <Route exact path="/">
-                        {/* exact birebir aynı demek aynı addaki sayfayı getirir */}
 
+                   {/* exact birebir aynı demek aynı addaki sayfayı getirir */}
+                    <Route exact path="/" render={()=>(
+                        <React.Fragment>  {/* React.Fragment tek div içinde aynı hiyerarşide etiketlerin yazılabilmesini sağlar */}
                         <div className="row">
                             <div className="col-lg-12">
                                 <SearchBar
@@ -94,11 +95,18 @@ class Filmler extends React.Component {
                             filmler_prop={this.Filtrele()}
                             Sil_Film_Prop={this.Sil_Film}
                         />
+                        </React.Fragment>
+                        )}> 
+                       
                     </Route>
 
-                    <Route  path="/ekle">
+                    {/* 1.yol
+                     <Route  path="/ekle">
                         <FilmEkle />
-                    </Route>
+                    </Route> */}
+
+                    {/* 2.yol aynı */}
+                    <Route path="/ekle" component={FilmEkle} />
 
                 </div>
             </Router>
