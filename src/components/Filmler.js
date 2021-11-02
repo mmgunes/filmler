@@ -56,7 +56,7 @@ class Filmler extends React.Component {
     Filtrele = () => {
         return this.state.filmler_db.filter(
             s => {
-                return s.title.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
+                return s.name.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
             }
 
 

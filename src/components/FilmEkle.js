@@ -40,7 +40,7 @@ class FilmEkle extends React.Component {
                                 name="overview" rows="5"></textarea>
                         </div>
                     </div>
-                    <input type="submit" className="btn btn-danger btn-block " value="Add Movie" />
+                    <input type="submit" className="mb-5 mt-3 btn btn-primary btn-lg btn-block" value="Add Movie" />
                 </form>
             </div>
         )
