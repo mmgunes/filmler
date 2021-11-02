@@ -48,6 +48,13 @@
       "imageURL": "matrix.com",
       "overview": "Matrix Açıklama",
       "id": 7
+    },
+    {
+      "name": "Matrix 4",
+      "rating": "9.2",
+      "imageURL": "matrix4.jpeg",
+      "overview": "Matrix 4 Açıklama",
+      "id": 8
     }
   ]
 }

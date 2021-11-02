@@ -55,10 +55,10 @@ class Filmler extends React.Component {
     }
 
     Ekle_Film_Fnk = async (film) => {
-        await axios.post( `http://localhost:3002/filmler_db/`,film)
-        this.setState(state => { filmler_db:state.filmler_db.concat(film)})
+        await axios.post(`http://localhost:3002/filmler_db/`, film)
+        this.setState(state => ({ filmler_db: state.filmler_db.concat(film) }))
         console.log(this.filmler_db);
-    } 
+    }
 
     Filtrele = () => {
         return this.state.filmler_db.filter(
@@ -85,25 +85,25 @@ class Filmler extends React.Component {
 
                 <div className="container">
 
-                   {/* exact birebir aynı demek aynı addaki sayfayı getirir */}
-                    <Route exact path="/" render={()=>(
+                    {/* exact birebir aynı demek aynı addaki sayfayı getirir */}
+                    <Route exact path="/" render={() => (
                         <React.Fragment>  {/* React.Fragment tek div içinde aynı hiyerarşide etiketlerin yazılabilmesini sağlar */}
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <SearchBar
-                                    filmAraProp={this.Ara_Film_Fnk}
-                                />
-                                <div className="display-3 bg-info">Display-3</div>
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <SearchBar
+                                        filmAraProp={this.Ara_Film_Fnk}
+                                    />
+                                    <div className="display-3 bg-info">Display-3</div>
+                                </div>
                             </div>
-                        </div>
-                        <MovieList
-                            // filmler_prop={this.state.filmler_db}
-                            filmler_prop={this.Filtrele()}
-                            Sil_Film_Prop={this.Sil_Film}
-                        />
+                            <MovieList
+                                // filmler_prop={this.state.filmler_db}
+                                filmler_prop={this.Filtrele()}
+                                Sil_Film_Prop={this.Sil_Film}
+                            />
                         </React.Fragment>
-                        )}> 
-                       
+                    )}>
+
                     </Route>
 
                     {/* 1.yol
@@ -113,17 +113,20 @@ class Filmler extends React.Component {
 
                     {/* 2.yol aynı */}
                     {/* <Route path="/ekle" component={FilmEkle} /> */}
-                    
-                    <Route exact path="/ekle" render={()=>(
 
-                        <FilmEkle 
-                        
-                        filmEkleProp = {(film) => {this.Ekle_Film_Fnk(film)}}
+                    <Route exact path="/ekle" render={(history) => (
+
+                        <FilmEkle
+                            filmEkleProp={(film) => { this.Ekle_Film_Fnk(film)
+                            
+                            history.push("/")
+                            }}
+                                
                         />
-                        )}> 
-                       
+                    )}>
+
                     </Route>
-                
+
 
                 </div>
             </Router>
