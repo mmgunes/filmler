@@ -3,7 +3,8 @@ import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 import axios from "axios";
 import FilmEkle from "./FilmEkle";
-
+//Router işlemi için ekledik
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 class Filmler extends React.Component {
@@ -31,7 +32,7 @@ class Filmler extends React.Component {
 
     // AXIOS kütüphanesiyle silme
 
-   Sil_Film = async (flm) => {
+    Sil_Film = async (flm) => {
 
 
 
@@ -46,7 +47,7 @@ class Filmler extends React.Component {
             { filmler_db: yeniFilmListesi }
         ))
 
-    } 
+    }
 
 
     Ara_Film_Fnk = (event) => {
@@ -73,23 +74,35 @@ class Filmler extends React.Component {
     render() {
 
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <SearchBar
-                            filmAraProp={this.Ara_Film_Fnk}
+            // <Router> divi return içinde diğer divleri kapsamalı
+            <Router>
+
+                <div className="container">
+                    <Route exact path="/">
+                        {/* exact birebir aynı demek aynı addaki sayfayı getirir */}
+
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <SearchBar
+                                    filmAraProp={this.Ara_Film_Fnk}
+                                />
+                                <div className="display-3 bg-info">Display-3</div>
+                            </div>
+                        </div>
+                        <MovieList
+                            // filmler_prop={this.state.filmler_db}
+                            filmler_prop={this.Filtrele()}
+                            Sil_Film_Prop={this.Sil_Film}
                         />
-                        <div className="display-3 bg-info">Display-3</div>
-                    </div>
+                    </Route>
+
+                    <Route  path="/ekle">
+                        <FilmEkle />
+                    </Route>
+
                 </div>
-                <MovieList
-                    // filmler_prop={this.state.filmler_db}
-                    filmler_prop={this.Filtrele()}
-                    Sil_Film_Prop={this.Sil_Film}
-                />
-                <FilmEkle />
-            </div>
-        )
+            </Router>
+        );
     }
 }
 
