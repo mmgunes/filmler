@@ -2,15 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 import axios from "axios";
-<<<<<<< HEAD
 import FilmEkle from "./FilmEkle";
-=======
-require('dotenv').config();
-//apiyi direk dışardan gözükmesin diye npm dotenv ekledik
-//proces.env. başına REACT_APP getirilmesi gerekir çağırıken
-
-console.log(process.env.REACT_APP_API_KEY);
->>>>>>> 5d48f794dd1a6f823dd219a4fbb5e4e5f48c88c7
 
 
 
@@ -30,35 +22,13 @@ class Filmler extends React.Component {
 
     async componentDidMount() {
 
-<<<<<<< HEAD
         const db_adres = await axios.get("http://localhost:3002/filmler_db");
         //db_adres.data da json şeklinde object tutuyor yani veritabanı
         this.setState({ filmler_db: db_adres.data });
-=======
-        //kendi api adresimizi ekliyoruz https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1
-        // const baseUrl = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US&page=1");
-        // console.log(baseUrl.data.results)
-
-        //Api direk gözükmemesi için DOTENV kullandık
-        // const baseUrl = await axios.get(`{https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1}`);
-        // console.log(baseUrl.data.results)
-
-        // Popüler filmleri getir 
-         const baseUrl = await axios.get("https://api.themoviedb.org/3/list/7112357?api_key=b069a85d79e68652d29df83fec3f67f1&language=en-US");
-         console.log(baseUrl.data.items);
-
-       
-        this.setState({ filmler_db: baseUrl.data.items });
->>>>>>> 5d48f794dd1a6f823dd219a4fbb5e4e5f48c88c7
 
 
     }
 
-<<<<<<< HEAD
-=======
-
-    
->>>>>>> 5d48f794dd1a6f823dd219a4fbb5e4e5f48c88c7
     // AXIOS kütüphanesiyle silme
 
    Sil_Film = async (flm) => {
