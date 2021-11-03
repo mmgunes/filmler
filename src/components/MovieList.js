@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const MovieList = (props) => {
 
@@ -38,8 +40,14 @@ const MovieList = (props) => {
                                 {/* aynı sayfada fonksiyonla farklı componentlarda props larla çağrılır. 
                                  onClick={(e)=>props.Sil_Film_Prop(flm)} 
                                 <button type="button" onClick={SilmeClick} className="btn btn-lg btn-outline-danger" >Delete</button> */}
-                                <button type="button" onClick={(event) => props.Sil_Film_Prop(flm)} className="btn btn-lg btn-outline-danger" >Delete</button>
-                                <button type="button"  className="btn btn-sm btn-primary">
+                                <button type="button" onClick={(event) => props.Sil_Film_Prop(flm)} className="btn btn-md btn-outline-danger" >Delete</button>
+                               <Link type="button"
+                               className="btn btn-md btn-outline-primary"
+                               to={`edit/${flm.id}`}
+                               >
+                               Düzenle</Link>
+                               
+                                <button type="button"  className="btn btn-sm btn-warning">
                                     <h3><span className="badge badge-light">{flm.rating}</span></h3>
                                 </button>
                             </div>
