@@ -48,6 +48,7 @@ class FilmDuzenle extends React.Component {
       const guncellenecekFilm= { name, rating, imageUrl, overview}
 
       this.props.guncelleProp(film_id,guncellenecekFilm);
+      this.props.history.push('/');   
 
     }
 
@@ -106,7 +107,7 @@ class FilmDuzenle extends React.Component {
                                 onChange={this.stateGuncelle}></textarea>
                         </div>
                     </div>
-                    <input type="submit" className="mb-5 mt-3 btn btn-primary btn-lg btn-block" value="Add Movie" />
+                    <input type="submit" className="mb-5 mt-3 btn btn-primary btn-lg btn-block" value="Film Güncelle" />
                 </form>
             </div>
         )

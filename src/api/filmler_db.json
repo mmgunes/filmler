@@ -22,11 +22,11 @@
       "imageUrl": "https://image.tmdb.org/t/p/w220_and_h330_face/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg"
     },
     {
-      "id": 4,
-      "name": "Rogue",
-      "rating": 7.4,
-      "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-      "imageUrl": "https://image.tmdb.org/t/p/w220_and_h330_face/uOw5JD8IlD546feZ6oxbIjvN66P.jpg"
+      "name": "Rogue 2",
+      "rating": "7.4 2",
+      "imageUrl": "https://image.tmdb.org/t/p/w220_and_h330_face/uOw5JD8IlD546feZ6oxbIjvN66P.jpg",
+      "overview": "This is a wider card with supporting text below as a natural lead-in to additional content. 2",
+      "id": 4
     },
     {
       "id": 5,
@@ -51,7 +51,7 @@
     },
     {
       "name": "Dune: Çöl Gezegeni",
-      "rating": "8.0",
+      "rating": "8.3",
       "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2WAIykbIIVeE3WHsxlLBLYTKBRA.jpg",
       "overview": "Dune, kendi ailesi ve halkının geleceğini garanti altına almak için evrendeki en tehlikeli gezegene seyahat etmek zorunda olan, kavrayışının ötesinde büyük bir kaderin içine doğmuş, parlak ve yetenekli genç Paul Atreides'in hikayesini anlatıyor. Kötücül güçler, gezegenin var olan en değerli kaynağı için -insanlığın en büyük potansiyelini ortaya çıkarabilecek bir maden- çatışmaya tutuşmuşken, yalnızca korkularını yenebilenler hayatta kalacaktır",
       "id": 17

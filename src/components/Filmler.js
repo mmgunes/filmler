@@ -61,6 +61,12 @@ class Filmler extends React.Component {
         console.log(this.filmler_db);
     }
 
+    Guncelle_Film_Fnk = async (id,film) => {
+        //güncelleme için post değil put kullanılır
+        await axios.put(`http://localhost:3002/filmler_db/${id}`, film)
+        
+    }
+
     Filtrele = () => {
         return this.state.filmler_db.filter(
             s => {
