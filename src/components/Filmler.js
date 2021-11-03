@@ -65,15 +65,9 @@ class Filmler extends React.Component {
             s => {
                 return s.name.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
             }
-
-
-            //bazıları name bazıları title olduğunda if(s.name) s.name varsa demek
-            // if(s.name){
-            //     return s.name.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
-            // }else{
-            //     return s.title.toLowerCase().indexOf(this.state.aramaQuery.toLowerCase()) !== -1
-            // }   
-        )
+        ).sort( ( a , b) => {
+            return a.id < b.id ? 1 : a.id > b.id ? -1 : 0 // 1 olduğunda 2.parametre(b) olanı -1 olduğunda 1.parametreyi(a) 0 eşit olduğunda döner
+        } )
     }
 
 

@@ -38,7 +38,8 @@ class FilmEkle extends React.Component {
                             <input
                                 type="text"
                                 className="form-control"
-                                name="imageURL" />
+                                name="imageUrl" />
+                                {/* name kısmı veritabanına hangi parametreyle kaydedilecekse örn name="resimLinki" */}
                         </div>
                     </div>
                     <div className="form-row">

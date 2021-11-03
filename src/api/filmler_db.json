@@ -43,53 +43,18 @@
       "imageUrl": "https://image.tmdb.org/t/p/w220_and_h330_face/6Bbq8qQWpoApLZYWFFAuZ1r2gFw.jpg"
     },
     {
-      "name": "Matrix",
-      "rating": "8.5",
-      "imageURL": "matrix.com",
-      "overview": "Matrix Açıklama",
-      "id": 7
-    },
-    {
-      "name": "Matrix 4",
-      "rating": "9.2",
-      "imageURL": "matrix4.jpeg",
-      "overview": "Matrix 4 Açıklama",
-      "id": 8
-    },
-    {
-      "name": "Matrix 2",
+      "name": "Yarının Savaşı ",
       "rating": "8.8",
-      "imageURL": "matrix2.jpeg",
-      "overview": "Matrix 2 Açıklama",
-      "id": 9
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg",
+      "overview": "İşgal altında bulunan dünyada insanlar, uzaylılara karşı verdikleri savaşta büyük bir yenilgiye uğrar. Artık değişen düzende yaşayan bilim insanları, sistemi değiştirmek için asker yetiştirmeye karar verir. Savaşa hazırlanmak için yeni bir yol keşfeden bilim insanları tarafından yetiştirilen askerlerin vereceği savaş, insanlığın geleceğini belirleyecektir.",
+      "id": 16
     },
     {
-      "name": "MGS",
-      "rating": "9.2",
-      "imageURL": "matrix.com",
-      "overview": "13",
-      "id": 10
-    },
-    {
-      "name": "MGS",
-      "rating": "9.2",
-      "imageURL": "matrix.com",
-      "overview": "777777",
-      "id": 11
-    },
-    {
-      "name": "MGS",
-      "rating": "9.2",
-      "imageURL": "matrix.com",
-      "overview": "666666",
-      "id": 14
-    },
-    {
-      "name": "Matrix 3",
-      "rating": "8.5",
-      "imageURL": "matrix3.jpeg",
-      "overview": "3333",
-      "id": 15
+      "name": "Dune: Çöl Gezegeni",
+      "rating": "8.0",
+      "imageUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2WAIykbIIVeE3WHsxlLBLYTKBRA.jpg",
+      "overview": "Dune, kendi ailesi ve halkının geleceğini garanti altına almak için evrendeki en tehlikeli gezegene seyahat etmek zorunda olan, kavrayışının ötesinde büyük bir kaderin içine doğmuş, parlak ve yetenekli genç Paul Atreides'in hikayesini anlatıyor. Kötücül güçler, gezegenin var olan en değerli kaynağı için -insanlığın en büyük potansiyelini ortaya çıkarabilecek bir maden- çatışmaya tutuşmuşken, yalnızca korkularını yenebilenler hayatta kalacaktır",
+      "id": 17
     }
   ]
 }
