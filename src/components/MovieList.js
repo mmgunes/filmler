@@ -7,6 +7,14 @@ const MovieList = (props) => {
     console.log(event.screenX);
    }   */
    
+   const aciklamaKirp = (aciklama, maxUzunluk) => {
+
+    if(!aciklama) return null; //(!aciklama) açıklama boş ise 
+    if(aciklama.length<=maxUzunluk) return aciklama;
+    return `${aciklama.substring(0, maxUzunluk)}...` //back t
+   }
+
+
     return (
         <div className="row">
 
@@ -14,8 +22,6 @@ const MovieList = (props) => {
             {this.props.filmler.map((flm)=>flm())} */}
 
             {props.filmler_prop.map((flm ,i) => ( 
-
-                
 
                 <div className="col-lg-4 " key={i}>
                     <div className="card mb-4 shadow-sm">
@@ -27,7 +33,7 @@ const MovieList = (props) => {
                             {/* //bazıları name bazıları title olduğunda 
                             <h5 className="card-title">{flm.name ? flm.name : flm.title}</h5> */}
                             <h5 className="card-title">{flm.name}</h5>
-                            <p className="card-text">{flm.overview}</p>
+                            <p className="card-text">{aciklamaKirp(flm.overview , 100)}</p>
                             <div className="d-flex justify-content-between align-items-center">
                                 {/* aynı sayfada fonksiyonla farklı componentlarda props larla çağrılır. 
                                  onClick={(e)=>props.Sil_Film_Prop(flm)} 
