@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 import axios from "axios";
 import FilmEkle from "./FilmEkle";
+import FilmDuzenle from "./FilmDuzenle";
 //Router işlemi için ekledik
 import { BrowserRouter as Router,  Route } from "react-router-dom";
 
@@ -122,6 +123,9 @@ class Filmler extends React.Component {
                     )}>
 
                     </Route>
+
+                    {/* id ile yönlendirmek gerekiyor */}
+                    <Route path="/edit/:id" component={FilmDuzenle}/>
 
 
                 </div>
