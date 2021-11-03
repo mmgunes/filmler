@@ -32,8 +32,31 @@ class FilmDuzenle extends React.Component {
 
     }
 
-    sayfaYenilenmesin = (e) => {
-        e.preventDefault();
+    Guncelle = (e) => {
+        e.preventDefault(); // sayfa yenilenmessin
+
+      /*  const name= this.state.name;
+        const rating= this.state.rating;
+        const imageUrl=this.state.imageUrl;
+        const overview=this.state.overview; */ //Bunu yapmak yerine 
+
+      // 2. YOL
+      const {name, rating, imageUrl, overview} = this.state;
+
+      const film_id= this.props.match.params.id;
+
+      const guncellenecekFilm= { name, rating, imageUrl, overview}
+
+      this.props.guncelleProp(film_id,guncellenecekFilm);
+
+    }
+
+    stateGuncelle = (e) => {
+       // console.log(e.target.name);
+       // console.log(e.target.value);
+        this.setState({
+            [e.target.name]: e.target.value
+        })
 
     }
 
@@ -41,7 +64,7 @@ class FilmDuzenle extends React.Component {
 
         return (
             <div className="container">
-                <form onSubmit={this.sayfaYenilenmesin} className="mt-5">
+                <form onSubmit={this.Guncelle} className="mt-5">
                     <input className="form-control" id="disabledInput" type="text" placeholder="Düzenlenecek Film Bilgileri ..." disabled />
                     <div className="form-row">
                         <div className="form-group col-md-10">
@@ -49,7 +72,8 @@ class FilmDuzenle extends React.Component {
                             <input type="text"
                                 className="form-control"
                                 name="name"
-                                value={this.state.name} />
+                                value={this.state.name}
+                                onChange={this.stateGuncelle} />
                         </div>
                         <div className="form-group col-md-2">
                             <label htmlFor="inputRating">Rating</label>
@@ -57,7 +81,8 @@ class FilmDuzenle extends React.Component {
                                 type="text"
                                 className="form-control"
                                 name="rating"
-                                value={this.state.rating} />
+                                value={this.state.rating}
+                                onChange={this.stateGuncelle} />
                         </div>
                     </div>
                     <div className="form-row">
@@ -66,8 +91,9 @@ class FilmDuzenle extends React.Component {
                             <input
                                 type="text"
                                 className="form-control"
-                                name="imageUrl" 
-                                value={this.state.imageUrl}/>
+                                name="imageUrl"
+                                value={this.state.imageUrl}
+                                onChange={this.stateGuncelle} />
                         </div>
                     </div>
                     <div className="form-row">
@@ -77,7 +103,7 @@ class FilmDuzenle extends React.Component {
                                 className="form-control"
                                 name="overview" rows="5"
                                 value={this.state.overview}
-                                ></textarea>
+                                onChange={this.stateGuncelle}></textarea>
                         </div>
                     </div>
                     <input type="submit" className="mb-5 mt-3 btn btn-primary btn-lg btn-block" value="Add Movie" />

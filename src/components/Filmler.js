@@ -124,8 +124,22 @@ class Filmler extends React.Component {
 
                     </Route>
 
-                    {/* id ile yönlendirmek gerekiyor */}
-                    <Route path="/edit/:id" component={FilmDuzenle}/>
+                        {/* bu sayfada id tanımsız hale geliyor. o yüzden render{(props)}  ve {...props} ikisini ekledik*/}
+                    <Route exact path="/edit/:id"  render={(props) => (
+
+                        <FilmDuzenle
+                        {...props}
+                            guncelleProp={(id, film) => { this.Guncelle_Film_Fnk(id ,film)
+                            
+                          
+                            }}
+                                
+                        />
+                    )}>
+
+                    </Route>
+
+                   
 
 
                 </div>
